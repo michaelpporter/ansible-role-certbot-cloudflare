@@ -1,0 +1,27 @@
+galaxy_info:
+  author: Michael Porter
+  description: your description
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.4
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+        - xenial
+  galaxy_tags:
+    - cloudflare
+    - networking
+    - system
+    - web
+    - certbot
+    - letsencrypt
+    - encryption
+    - certificates
+    - ssl
+    - https
+
+dependencies:
+    - src: geerlingguy.pip
+      version: 1.2.2
+    - src: geerlingguy.certbot
+      version: 3.0.0

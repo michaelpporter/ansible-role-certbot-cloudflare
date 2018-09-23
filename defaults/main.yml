@@ -1,0 +1,11 @@
+---
+# defaults file for certbot-cloudflare
+
+# Email address for Cloudflare Global API Key
+certbot_cloudflare_email: "cloudflare@example.com"
+# Your Global API Key from your account
+# ansible-vault encrypt_string 'cloudflareAPIKey' --name 'certbot_cloudflare_api_key'
+certbot_cloudflare_api_key: ''
+
+certbot_create_standalone_stop_services: []
+certbot_create_if_missing: yes
