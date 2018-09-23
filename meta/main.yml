@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: certbot-cloudflare
   author: Michael Porter
   description: your description
   license: "license (BSD, MIT)"
