@@ -12,16 +12,6 @@
     - python-dev
     - python-pycurl
 
-- name: Install pip
-  include_role:
-    name: geerlingguy.pip
-
-- name: Install Certbot without Domains.
-  include_role:
-    name: geerlingguy.certbot
-  vars:
-    certbot_certs: []
-
 - name: check if certbot-dns-cloudflare plugin is installed
   shell: certbot plugins | grep dns-cloudflare
   register: cf_check
@@ -31,6 +21,7 @@
 - name: Install certbot-dns-cloudflare
   shell: "cd {{certbot_dir}}/certbot-dns-cloudflare && python setup.py install"
   when: cf_check is failed
+
 - name: Create certbot folder - sudouser
   file:
     path: /etc/letsencrypt
@@ -38,6 +29,7 @@
     owner: root
     group: root
     mode: 0700
+
 - name: Certbot Template
   template:
     src: "{{ item.src }}"
